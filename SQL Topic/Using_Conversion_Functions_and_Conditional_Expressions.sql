@@ -8,13 +8,16 @@ SELECT last_name, NVL(TO_CHAR(commission_pct),
 'Not Applicable') commission
  FROM employees
  WHERE last_name LIKE 'B%'
- ORDER BY last_name;
-NULLIF
+ ORDER BY last_name; --Ou seja os valores nulos retornarão Não aplicável
+ 
+ 
+/*NULLIF
 O exemplo a seguir seleciona os funcionários do
 esquema de exemplo hr que mudaram de cargo desde
 que foram contratados, conforme indicado por um
 job_id na job_history tabela diferente do atual
-job_id na tabela employees:
+job_id na tabela employees:/*
+
 SELECT e.last_name, NULLIF(j.job_id, e.job_id)
 "Old Job ID"
  FROM employees e, job_history j
