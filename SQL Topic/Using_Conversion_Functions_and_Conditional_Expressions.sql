@@ -44,7 +44,8 @@ a função:*/
 SELECT
  COALESCE(NULL,1,'A')
 FROM
- dual;
+ dual; -- Retorna um ero porque os tipos de dados são diferentes, ou seja, os dados precisam ser do mesmo tipo ou deve haver conversão
+ -- segue erro: ORA-00932: tipos de dados inconsistentes: esperava NUMBER obteve CHAR
  
  
 CONVERSÃO IMPLICITA
