@@ -24,9 +24,9 @@ SELECT e.last_name, NULLIF(j.job_id, e.job_id)
  WHERE e.employee_id = j.employee_id
  ORDER BY last_name, "Old Job ID"; --Retornará nullo em caso de não haver mudança no cargo
  
-COALESCE
+/*COALESCE
 O exemplo a seguir retorna um porque é o primeiro
-argumento não nulo:
+argumento não nulo:*/
 SELECT
  COALESCE(NULL,1) -- return 1
 FROM
