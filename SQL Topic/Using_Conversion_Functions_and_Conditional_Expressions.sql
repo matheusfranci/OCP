@@ -1,8 +1,9 @@
-sqlplus hr/welcome1@pdb1
+/*sqlplus hr/welcome1@pdb1
 NVL
 O exemplo a seguir retorna uma lista de nomes de funcionários
 e comissões, substituindo "Não aplicável" se o funcionário não
-receber comissão:
+receber comissão:*/
+
 SELECT last_name, NVL(TO_CHAR(commission_pct),
 'Not Applicable') commission
  FROM employees
