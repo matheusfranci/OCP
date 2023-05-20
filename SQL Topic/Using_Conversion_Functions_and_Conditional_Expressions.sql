@@ -73,10 +73,13 @@ DD-MON-YY':*/
 SELECT last_name
  FROM employees
  WHERE hire_date = '24-JUN-06';
+ 
 TO_CHAR (caractere)
 SELECT TO_CHAR('01110') FROM DUAL;
+
 TO_CHAR (número)
 SELECT TO_CHAR('01110' + 1) FROM DUAL;
+
 TO_CHAR(datetime)
 WITH dates AS (
  SELECT date'2015-01-01' d FROM dual union
@@ -97,6 +100,7 @@ caracteres em um número:*/
 UPDATE employees SET salary = salary +
  TO_NUMBER('100.00', '9G999D99')
  WHERE last_name = 'Perkins';
+ -- Implicito é aquilo que a engine do oracle faz sem o dba especificar, explicito precisa do dba especificar.
  
 /*O exemplo a seguir retorna o valor padrão de 0porque a
 expressão especificada não pode ser convertida em um
