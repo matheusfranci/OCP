@@ -3,7 +3,6 @@ NVL
 O exemplo a seguir retorna uma lista de nomes de funcionários
 e comissões, substituindo "Não aplicável" se o funcionário não
 receber comissão:*/
-
 SELECT last_name, NVL(TO_CHAR(commission_pct),
 'Not Applicable') commission
  FROM employees
@@ -17,7 +16,6 @@ esquema de exemplo hr que mudaram de cargo desde
 que foram contratados, conforme indicado por um
 job_id na job_history tabela diferente do atual
 job_id na tabela employees:*/
-
 SELECT e.last_name, NULLIF(j.job_id, e.job_id)
 "Old Job ID"
  FROM employees e, job_history j
@@ -31,18 +29,24 @@ SELECT
  COALESCE(NULL,1) -- return 1
 FROM
  dual;
-O exemplo a seguir retorna um valor com tipo de
-caractere porque todos os argumentos são caracteres.
+ 
+ 
+/*O exemplo a seguir retorna um valor com tipo de
+caractere porque todos os argumentos são caracteres.*/
 SELECT
  COALESCE(NULL,'A','B') result
 FROM
  dual;
-O exemplo a seguir usa argumentos de diferentes tipos para
-a função:
+ 
+ 
+/*O exemplo a seguir usa argumentos de diferentes tipos para
+a função:*/
 SELECT
  COALESCE(NULL,1,'A')
 FROM
  dual;
+ 
+ 
 CONVERSÃO IMPLICITA
 Texto Literal Exemplo
 O literal de texto '10' tem tipo de dados CHAR. O Oracle o converte
