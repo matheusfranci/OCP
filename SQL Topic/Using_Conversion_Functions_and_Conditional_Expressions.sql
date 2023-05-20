@@ -16,7 +16,7 @@ O exemplo a seguir seleciona os funcionários do
 esquema de exemplo hr que mudaram de cargo desde
 que foram contratados, conforme indicado por um
 job_id na job_history tabela diferente do atual
-job_id na tabela employees:/*
+job_id na tabela employees:*/
 
 SELECT e.last_name, NULLIF(j.job_id, e.job_id)
 "Old Job ID"
