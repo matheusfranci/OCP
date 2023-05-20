@@ -49,25 +49,27 @@ FROM
  
  
 CONVERSÃO IMPLICITA
-Texto Literal Exemplo
+/*Texto Literal Exemplo
 O literal de texto '10' tem tipo de dados CHAR. O Oracle o converte
 implicitamente no NUMBER tipo de dados se ele aparecer em uma
-expressão numérica como na seguinte instrução:
+expressão numérica como na seguinte instrução:*/
 SELECT salary + '10'
  FROM employees;
-Exemplo de valores de caracteres e números
+
+ /*Exemplo de valores de caracteres e números
 Quando uma condição compara um valor de caractere e um
 NUMBER valor, o Oracle converte implicitamente o valor de
 caractere em um NUMBER valor, em vez de converter o NUMBER
 valor em um valor de caractere. Na instrução a seguir, o Oracle
-converte implicitamente '200' em 200:
+converte implicitamente '200' em 200:*/
 SELECT last_name
  FROM employees
  WHERE employee_id = '200';
-Data Exemplo
+ 
+/*Data Exemplo
 Na instrução a seguir, o Oracle converte implicitamente ' 24-
 JUN-06' em um DATE valor usando o formato de data padrão '
-DD-MON-YY':
+DD-MON-YY':*/
 SELECT last_name
  FROM employees
  WHERE hire_date = '24-JUN-06';
@@ -88,21 +90,24 @@ format",
  to_char(d, 'iw-iyyy') "ISO Year and
 Week of Year"
 FROM dates;
-TO_NUMBER
+
+/*TO_NUMBER
 Os exemplos a seguir convertem dados de cadeia de
-caracteres em um número:
+caracteres em um número:*/
 UPDATE employees SET salary = salary +
  TO_NUMBER('100.00', '9G999D99')
  WHERE last_name = 'Perkins';
-O exemplo a seguir retorna o valor padrão de 0porque a
+ 
+/*O exemplo a seguir retorna o valor padrão de 0porque a
 expressão especificada não pode ser convertida em um
-NUMBER valor:
+NUMBER valor:*/
 SELECT TO_NUMBER('2,00' DEFAULT 0 ON
 CONVERSION ERROR) "Value"
  FROM DUAL;
-TO_DATE
+ 
+/*TO_DATE
 O exemplo a seguir converte uma cadeia de caracteres em
-uma data:
+uma data:*/
 SELECT TO_DATE(
  'January 15, 1989, 11:00 A.M.',
  'Month dd, YYYY, HH:MI A.M.',
